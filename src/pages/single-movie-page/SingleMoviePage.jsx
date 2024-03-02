@@ -1,17 +1,17 @@
-import AdditionalMovieInformationCard from 'components/additional-movie-information-card/AdditionalMovieInformationCard';
-import MovieCard from 'components/movie-card/MovieCard';
-import { Loader } from 'components/shared/loader/Loader';
-import { Suspense, useEffect, useRef, useState } from 'react';
-import { Outlet, useLocation, useParams } from 'react-router-dom';
-import { getMovieById } from 'services/MoviesDbApi';
-import { StyledLink, StyledSection } from './SingleMoviePage.styled';
+import AdditionalMovieInformationCard from "../../components/additional-movie-information-card/AdditionalMovieInformationCard";
+import MovieCard from "../../components/movie-card/MovieCard";
+import { Loader } from "../../components/shared/loader/Loader";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Outlet, useLocation, useParams } from "react-router-dom";
+import { getMovieById } from "../../services/MoviesDbApi";
+import { StyledLink, StyledSection } from "./SingleMoviePage.styled";
 
 const SingleMoviePage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
   const location = useLocation();
-  const previousPage = useRef(location.state?.from || '/');
+  const previousPage = useRef(location.state?.from || "/");
 
   useEffect(() => {
     (async () => {

@@ -1,8 +1,8 @@
-import ReviewCard from 'components/review-card/ReviewCard';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getMovieReviews } from 'services/MoviesDbApi';
-import { StyledList, StyledWrapper } from './MovieReviews.styled';
+import ReviewCard from "@/components/review-card/ReviewCard";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getMovieReviews } from "@/services/MoviesDbApi";
+import { StyledList, StyledWrapper } from "./MovieReviews.styled";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -29,9 +29,10 @@ const MovieReviews = () => {
               </li>
             ))}
           </StyledList>
-        )) || <p>We don't have any reviews for this movie.</p>}
+        )) || <p>{"We don't have any reviews for this movie."}</p>}
       </StyledWrapper>
     );
+  s;
 };
 
 export default MovieReviews;

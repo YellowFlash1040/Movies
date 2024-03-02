@@ -1,8 +1,8 @@
-import MoviesList from 'components/movies-list/MoviesList';
-import { StyledSection } from 'components/shared/StyledComponents';
-import React, { useEffect, useState } from 'react';
-import { getTrendingMovies } from 'services/MoviesDbApi';
-import { StyledH1 } from './HomePage.styled';
+import MoviesList from "../../components/movies-list/MoviesList";
+import { StyledSection } from "../../components/shared/StyledComponents";
+import React, { useEffect, useState } from "react";
+import { getTrendingMovies } from "../../services/MoviesDbApi";
+import { StyledH1 } from "./HomePage.styled";
 
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);

@@ -1,6 +1,6 @@
-import NavigationBar from 'components/navigation-bar/NavigationBar';
-import React from 'react';
-import { StyledHeader } from './Header.styled';
+import { NavigationBar } from "../../components";
+import React from "react";
+import { StyledHeader } from "./Header.styled";
 
 const Header = () => {
   return (

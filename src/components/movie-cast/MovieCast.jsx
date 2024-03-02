@@ -1,8 +1,8 @@
-import ActorCard from 'components/actor-card/ActorCard';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getMovieCast } from 'services/MoviesDbApi';
-import { StyledList, StyledWrapper } from './MovieCast.styled';
+import ActorCard from "../../components/actor-card/ActorCard";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getMovieCast } from "../../services/MoviesDbApi";
+import { StyledList, StyledWrapper } from "./MovieCast.styled";
 
 const MovieCast = () => {
   const { movieId } = useParams();

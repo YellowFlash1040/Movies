@@ -1,5 +1,5 @@
-import React from 'react';
-import { getFullImageFilePath } from 'services/MoviesPostersDbApi';
+import React from "react";
+import { getFullImageFilePath } from "../../services/MoviesPostersDbApi";
 
 const ActorCard = ({ imageUrl, name, character }) => {
   return (
@@ -7,11 +7,11 @@ const ActorCard = ({ imageUrl, name, character }) => {
       <img
         src={getFullImageFilePath(imageUrl)}
         alt={name}
-        width="100"
-        height="150"
-        style={{ marginBottom: '20px' }}
+        width='100'
+        height='150'
+        style={{ marginBottom: "20px" }}
       />
-      <p style={{ marginBottom: '10px' }}>{name}</p>
+      <p style={{ marginBottom: "10px" }}>{name}</p>
       <p>Character: {character}</p>
     </>
   );

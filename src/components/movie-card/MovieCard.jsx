@@ -1,5 +1,5 @@
-import { getFullImageFilePath } from 'services/MoviesPostersDbApi';
-import { StyledCardWrapper, StyledList } from './MovieCard.styled';
+import { getFullImageFilePath } from "../../services/MoviesPostersDbApi";
+import { StyledCardWrapper, StyledList } from "./MovieCard.styled";
 
 const MovieCard = ({
   imageUrl,
@@ -10,22 +10,22 @@ const MovieCard = ({
   overview,
 }) => {
   imageUrl = getFullImageFilePath(imageUrl);
-  const year = releaseDate.split('-')[0];
+  const year = releaseDate.split("-")[0];
 
   if (imageUrl !== undefined) {
     return (
       <StyledCardWrapper>
-        <img src={imageUrl} alt="Movie card" width="200" height="300" />
+        <img src={imageUrl} alt='Movie card' width='200' height='300' />
         <ul
           style={{
-            padding: '0 20px',
-            listStyleType: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '20px',
+            padding: "0 20px",
+            listStyleType: "none",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
           }}
         >
-          <li style={{ marginBottom: '10px' }}>
+          <li style={{ marginBottom: "10px" }}>
             <h1>{title + ` (${year})`}</h1>
             <p>User score: {score}%</p>
           </li>
