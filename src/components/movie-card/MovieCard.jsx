@@ -1,6 +1,8 @@
 import { getFullImageFilePath } from "../../services/MoviesPostersDbApi";
 import { StyledCardWrapper, StyledList } from "./MovieCard.styled";
 
+import styles from "./MovieCard.module.css";
+
 const MovieCard = ({
   imageUrl,
   title,
@@ -15,16 +17,14 @@ const MovieCard = ({
   if (imageUrl !== undefined) {
     return (
       <StyledCardWrapper>
-        <img src={imageUrl} alt='Movie card' width='200' height='300' />
-        <ul
-          style={{
-            padding: "0 20px",
-            listStyleType: "none",
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-          }}
-        >
+        <img
+          className={styles.moviePoster}
+          src={imageUrl}
+          alt='Movie card'
+          width='200'
+          height='300'
+        />
+        <ul className={styles.movieInfoList}>
           <li style={{ marginBottom: "10px" }}>
             <h1>{title + ` (${year})`}</h1>
             <p>User score: {score}%</p>

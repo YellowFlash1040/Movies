@@ -1,0 +1,64 @@
+.moviePageUrl {
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  border: 1px solid black;
+
+  height: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.movieInfoWrapper {
+  background-color: var(--movie-card-info-panel-color);
+
+  width: 100%;
+  padding: 8px 10px;
+
+  font-size: 14px;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  max-width: 200px;
+  text-align: center;
+
+  color: #35374b;
+  position: relative;
+}
+
+.cardTitle::after {
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background-color: red;
+
+  width: 0;
+  height: 3px;
+
+  border-radius: 4px;
+
+  transition: width 250ms ease-in-out;
+}
+
+.card:hover .cardTitle::after {
+  width: 100%;
+}

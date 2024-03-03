@@ -1,6 +1,9 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import { Layout } from "../components";
 import { lazy } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+
+import { Layout } from "../components";
+
+import "../shared/css/index.css";
 
 const HomePage = lazy(() => import("../pages/home-page/HomePage"));
 const MoviesPage = lazy(() => import("../pages/movies-page/MoviesPage"));

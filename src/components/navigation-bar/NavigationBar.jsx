@@ -1,13 +1,18 @@
-import { StyledLink } from "../shared/StyledComponents";
 import React from "react";
-import { NavigationMenu } from "./NavigationBar.styled";
+
+import styles from "./NavigationBar.module.css";
+import { NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
-    <NavigationMenu>
-      <StyledLink to='/'>Home</StyledLink>
-      <StyledLink to='/movies'>Movies</StyledLink>
-    </NavigationMenu>
+    <nav className={styles.navigationMenu}>
+      <NavLink className={styles.menuLink} to='/'>
+        Home
+      </NavLink>
+      <NavLink className={styles.menuLink} to='/movies'>
+        Movies
+      </NavLink>
+    </nav>
   );
 };
 

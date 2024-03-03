@@ -1,0 +1,11 @@
+.moviePoster {
+  border-radius: 20px;
+}
+
+.movieInfoList {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: green;
+}

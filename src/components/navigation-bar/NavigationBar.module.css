@@ -1,0 +1,39 @@
+.navigationMenu {
+  display: flex;
+  gap: 20px;
+}
+
+.menuLink {
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+
+  position: relative;
+
+  transition: color 250ms ease-in-out;
+
+  &:global.active {
+    color: red;
+  }
+}
+
+.menuLink::after {
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 0;
+  height: 4px;
+
+  background-color: red;
+  border-radius: 8px;
+
+  transition: width 250ms ease-in-out;
+}
+
+.menuLink:hover::after {
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+.section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  background-color: var(--section-color);
+
+  min-height: 100vh;
+}

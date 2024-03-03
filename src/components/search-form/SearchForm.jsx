@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
-import { StyledForm } from './SearchForm.styled';
+import React, { useState } from "react";
+
+import styles from "./SearchForm.module.css";
 
 const SearchForm = ({ submit }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const handleFormSubmit = event => {
     event.preventDefault();
     submit(query);
-    setQuery('');
+    setQuery("");
   };
 
   return (
-    <StyledForm onSubmit={handleFormSubmit}>
+    <form className={styles.form} onSubmit={handleFormSubmit}>
       <input
-        type="text"
+        className={styles.input}
+        type='text'
         value={query}
         onChange={event => setQuery(event.target.value)}
-        style={{ width: '300px' }}
+        style={{ width: "300px" }}
       />
-      <button>Search</button>
-    </StyledForm>
+      <button className={styles.searchButton}>Search</button>
+    </form>
   );
 };
 

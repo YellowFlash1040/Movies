@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledLink = styled(NavLink)`
-  color: ${props => props.$color || 'black'};
+  color: ${props => props.$color || "black"};
   font-size: calc((1vh + 1vw) * 1.5);
   font-weight: bold;
   text-decoration: none;
@@ -17,4 +17,8 @@ export const StyledLink = styled(NavLink)`
 
 export const StyledSection = styled.section`
   padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: var(--section-color);
+
+  min-height: 100vh;
 `;
