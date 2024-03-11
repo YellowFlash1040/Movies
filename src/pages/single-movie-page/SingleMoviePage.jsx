@@ -2,9 +2,10 @@ import AdditionalMovieInformationCard from "../../components/additional-movie-in
 import MovieCard from "../../components/movie-card/MovieCard";
 import { Loader } from "../../components/shared/loader/Loader";
 import { Suspense, useEffect, useRef, useState } from "react";
-import { Outlet, useLocation, useParams } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMovieById } from "../../services/MoviesDbApi";
-import { StyledLink, StyledSection } from "./SingleMoviePage.styled";
+
+import styles from "./SingleMoviePage.module.css";
 
 const SingleMoviePage = () => {
   const { movieId } = useParams();
@@ -26,23 +27,48 @@ const SingleMoviePage = () => {
 
   if (movie) {
     return (
-      <StyledSection>
-        <StyledLink to={previousPage.current}>← Go back</StyledLink>
-        <MovieCard
-          imageUrl={movie.poster_path}
-          title={movie.title}
-          releaseDate={movie.release_date}
-          genres={movie.genres}
-          score={countScoreInPercents(movie.vote_average)}
-          overview={movie.overview}
-        />
-        <AdditionalMovieInformationCard previousPage={previousPage.current} />
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
-      </StyledSection>
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.bigScreenContainer}>
+            <NavLink className={styles.backButton} to={previousPage.current}>
+              ← Go back
+            </NavLink>
+            <MovieCard
+              imageUrl={movie.poster_path}
+              title={movie.title}
+              releaseDate={movie.release_date}
+              genres={movie.genres}
+              score={countScoreInPercents(movie.vote_average)}
+              overview={movie.overview}
+            />
+            <AdditionalMovieInformationCard
+              previousPage={previousPage.current}
+            />
+          </div>
+          <Suspense fallback={<Loader />}>
+            <div className={styles.additionalMovieInfoWrapper}>
+              <Outlet />
+            </div>
+          </Suspense>
+        </div>
+      </section>
     );
   }
+
+  return (
+    <section className={styles.section}>
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <Loader />
+      </div>
+    </section>
+  );
 };
 
 export default SingleMoviePage;

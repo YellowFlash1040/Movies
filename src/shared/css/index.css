@@ -2,6 +2,8 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   margin: 0;
+
+  background-color: var(--section-color);
 }
 
 h1,
@@ -32,4 +34,15 @@ img {
   --section-color: #ebd9b4;
   --trending-today-color: #fefbf6;
   --movie-card-info-panel-color: #ecb159;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
 }

@@ -19,6 +19,7 @@ const SearchForm = ({ submit }) => {
         value={query}
         onChange={event => setQuery(event.target.value)}
         style={{ width: "300px" }}
+        placeholder='Search for something...'
       />
       <button className={styles.searchButton}>Search</button>
     </form>

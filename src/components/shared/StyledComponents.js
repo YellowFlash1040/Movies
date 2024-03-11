@@ -20,5 +20,5 @@ export const StyledSection = styled.section`
   padding-bottom: 40px;
   background-color: var(--section-color);
 
-  min-height: 100vh;
+  // min-height: 100vh;
 `;

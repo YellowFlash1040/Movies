@@ -38,6 +38,9 @@ const MoviesPage = () => {
   return (
     <section className={styles.section}>
       <SearchForm submit={handleChangeSearchParams} />
+      {!isLoading && movies.length === 0 && (
+        <p className={styles.nothingLabel}>Nothing to show yet ...</p>
+      )}
       {(!isLoading && <MoviesList movies={movies} />) || <Loader />}
     </section>
   );

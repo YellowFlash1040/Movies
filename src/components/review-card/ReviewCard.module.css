@@ -1,0 +1,50 @@
+.reviewCard {
+  border-radius: 20px;
+
+  background-color: rgb(243, 201, 118);
+
+  padding: 10px 10px 20px 10px;
+}
+
+@media only screen and (min-width: 375px) {
+  .reviewCard {
+    border: 2px solid white;
+    padding: 20px 20px 30px 20px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .reviewerName {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .reviewerName {
+    font-size: 24px;
+  }
+}
+
+.reviewerName {
+  font-weight: 600;
+  margin-bottom: 12px;
+
+  background-color: white;
+  border: 2px solid black;
+
+  border-radius: 20px;
+
+  padding: 6px 10px;
+
+  display: inline-block;
+}
+
+.reviewText {
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 767px) {
+  .reviewText {
+    padding: 0px 20px;
+  }
+}

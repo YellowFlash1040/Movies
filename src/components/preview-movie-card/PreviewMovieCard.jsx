@@ -5,6 +5,8 @@ import styles from "./PreviewMovieCard.module.css";
 
 import { getFullImageFilePath } from "services/MoviesPostersDbApi";
 
+import Avatar from "@/assets/images/svg/icon.svg?react";
+
 const PreviewMovieCard = ({
   id,
   imageUrl,
@@ -21,13 +23,19 @@ const PreviewMovieCard = ({
       state={{ from: fromLocation }}
       to={`/movies/${id}`}
     >
-      <div className={styles.card}>
-        <img src={imageUrl} alt={title} width='220' height='360' />
-        <div className={styles.movieInfoWrapper}>
-          <h3 className={styles.cardTitle}>
-            {title} ({year})
-          </h3>
-        </div>
+      {(imageUrl && (
+        <img src={imageUrl} alt={title} width='200' height='300' />
+      )) || (
+        <Avatar
+          width='200px'
+          height='300px'
+          style={{ display: "block", maxWidth: "100%" }}
+        />
+      )}
+      <div className={styles.movieInfoWrapper}>
+        <h3 className={styles.cardTitle}>
+          {title} ({year})
+        </h3>
       </div>
     </NavLink>
   );

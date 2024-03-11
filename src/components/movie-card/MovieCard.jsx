@@ -1,5 +1,6 @@
 import { getFullImageFilePath } from "../../services/MoviesPostersDbApi";
-import { StyledCardWrapper, StyledList } from "./MovieCard.styled";
+
+import Avatar from "@/assets/images/svg/icon.svg?react";
 
 import styles from "./MovieCard.module.css";
 
@@ -16,33 +17,47 @@ const MovieCard = ({
 
   if (imageUrl !== undefined) {
     return (
-      <StyledCardWrapper>
-        <img
-          className={styles.moviePoster}
-          src={imageUrl}
-          alt='Movie card'
-          width='200'
-          height='300'
-        />
+      <div className={styles.movieCardWrapper}>
+        {(imageUrl && (
+          <img
+            className={styles.moviePoster}
+            src={imageUrl}
+            alt='Movie card'
+            width='270'
+            height='400'
+          />
+        )) || (
+          <Avatar
+            className={styles.emptyMoviePoster}
+            width='270px'
+            height='400px'
+            style={{
+              display: "block",
+              maxWidth: "100%",
+            }}
+          />
+        )}
         <ul className={styles.movieInfoList}>
           <li style={{ marginBottom: "10px" }}>
-            <h1>{title + ` (${year})`}</h1>
-            <p>User score: {score}%</p>
+            <div className={styles.movieInfoHeader}>
+              <h1>{title + ` (${year})`}</h1>
+              <span>User score: {score}%</span>
+            </div>
           </li>
           <li>
             <h2>Overview</h2>
             <p>{overview}</p>
           </li>
           <li>
-            <h2>Genres</h2>
-            <StyledList>
+            <h2 className={styles.genredListHeader}>Genres</h2>
+            <ul className={styles.movieGenresList}>
               {genres.map(genre => (
                 <li key={genre.id}>{genre.name}</li>
               ))}
-            </StyledList>
+            </ul>
           </li>
         </ul>
-      </StyledCardWrapper>
+      </div>
     );
   }
 };

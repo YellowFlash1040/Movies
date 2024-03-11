@@ -1,0 +1,52 @@
+.section {
+  height: 100%;
+}
+
+.container {
+  padding: 20px 40px;
+  margin: 0 auto;
+
+  width: 768px;
+
+  width: 100%;
+}
+
+@media only screen and (min-width: 1240px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1375px) {
+  .bigScreenContainer {
+    max-width: 1375px;
+    margin: 0 auto;
+  }
+}
+
+.backButton {
+  border-radius: 20px;
+  padding: 6px 10px;
+
+  text-decoration: none;
+
+  margin-bottom: 20px;
+  display: inline-block;
+
+  background-color: rgb(236, 173, 26);
+  color: white;
+
+  border: 2px solid transparent;
+
+  transition: border 250ms ease-in-out;
+
+  &:hover {
+    border-color: red;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .additionalMovieInfoWrapper {
+    padding-top: 20px;
+  }
+}

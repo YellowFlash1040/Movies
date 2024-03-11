@@ -1,12 +1,8 @@
 .moviePageUrl {
   text-decoration: none;
-}
 
-.card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   border-radius: 10px;
   overflow: hidden;
@@ -23,42 +19,31 @@
 .movieInfoWrapper {
   background-color: var(--movie-card-info-panel-color);
 
-  width: 100%;
   padding: 8px 10px;
 
   font-size: 14px;
 
-  height: 100%;
+  flex: 1;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cardTitle {
-  max-width: 200px;
   text-align: center;
 
   color: #35374b;
-  position: relative;
+
+  padding: 5px 10px;
+
+  border: 2px solid transparent;
+  border-radius: 20px;
+
+  transition: border-color 250ms, color 250ms;
 }
 
-.cardTitle::after {
-  content: "";
-
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  background-color: red;
-
-  width: 0;
-  height: 3px;
-
-  border-radius: 4px;
-
-  transition: width 250ms ease-in-out;
-}
-
-.card:hover .cardTitle::after {
-  width: 100%;
+.moviePageUrl:hover .cardTitle {
+  border-color: #fff6e9;
+  color: #fff6e9;
 }

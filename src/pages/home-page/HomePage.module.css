@@ -1,0 +1,36 @@
+.section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  height: 100%;
+}
+
+.sectionHeader {
+  font-size: 20px;
+  width: 200px;
+}
+
+@media only screen and (min-width: 425px) {
+  .sectionHeader {
+    font-size: 26px;
+    width: 300px;
+  }
+}
+
+.sectionHeader {
+  margin-bottom: 20px;
+  text-align: center;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: var(--trending-today-color);
+
+  border-radius: 20px;
+
+  padding: 4px 10px;
+
+  /* border: 1px solid green; */
+  border: 2px solid rgb(180, 112, 28);
+}

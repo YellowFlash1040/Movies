@@ -1,8 +1,8 @@
 import MoviesList from "../../components/movies-list/MoviesList";
-import { StyledSection } from "../../components/shared/StyledComponents";
 import React, { useEffect, useState } from "react";
 import { getTrendingMovies } from "../../services/MoviesDbApi";
-import { StyledH1 } from "./HomePage.styled";
+
+import styles from "./HomePage.module.css";
 
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -19,10 +19,10 @@ const HomePage = () => {
   }, []);
 
   return (
-    <StyledSection>
-      <StyledH1>Trending today</StyledH1>
+    <section className={styles.section}>
+      <h1 className={styles.sectionHeader}>Trending today</h1>
       <MoviesList movies={trendingMovies} />
-    </StyledSection>
+    </section>
   );
 };
 

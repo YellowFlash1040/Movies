@@ -1,10 +1,4 @@
-import styled from 'styled-components';
-
-export const StyledList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-`;
+import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
   padding-top: 20px;

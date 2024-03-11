@@ -1,24 +1,31 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { StyledWrapper } from './AdditionalMovieInformationCard.styled';
+import { NavLink } from "react-router-dom";
+import styles from "./AdditionalMovieInformationCard.module.css";
 
 const AdditionalMovieInformationCard = ({ previousPage }) => {
   return (
-    <StyledWrapper>
-      <h2>Additional information</h2>
-      <ul>
+    <div className={styles.wrapper}>
+      <h2 className={styles.sectionHeader}>Additional information</h2>
+      <ul className={styles.additionalInfoList}>
         <li>
-          <Link state={{ from: previousPage }} to={`cast`}>
+          <NavLink
+            className={styles.additionalInfoButton}
+            state={{ from: previousPage }}
+            to={`cast`}
+          >
             Cast
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link state={{ from: previousPage }} to={`reviews`}>
+          <NavLink
+            className={styles.additionalInfoButton}
+            state={{ from: previousPage }}
+            to={`reviews`}
+          >
             Reviews
-          </Link>
+          </NavLink>
         </li>
       </ul>
-    </StyledWrapper>
+    </div>
   );
 };
 
